@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Undangan Pernikahan — Udin & Lisa</title>
+    <!-- Google Fonts & Lucide Icons -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;800;900&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- AUDIO PLAYER FLOATING BUTTON -->
+    <div class="audio-control" id="audioBtn">
+        <i data-lucide="disc" class="rotating"></i>
+    </div>
+    <!-- Musik Latar (Bisa diganti URL mp3 Gamelan / Instrumentalia Jawa) -->
+    <audio id="bgMusic" loop src="https://cdn.pixabay.com/download/audio/2022/05/27/audio_1808fbf07a.mp3?filename=traditional-asian-instrumental-112348.mp3"></audio>
+
+    <!-- BACKGROUND PATTERN BATIK & GLOW -->
+    <div class="batik-pattern-overlay"></div>
+    <div class="glow-orb orb-top"></div>
+    <div class="glow-orb orb-bottom"></div>
+
+    <!-- 1. COVER OVERLAY (Pintu Masuk Undangan) -->
+    <div class="cover-screen" id="coverScreen">
+        <div class="cover-content">
+            <div class="batik-frame-top">❖ ꦱꦼꦫꦠꦤ꧀ꦏꦱ꧀ꦩꦫꦤ꧀ ❖</div>
+            <p class="subtitle">UNDANGAN PERNIKAHAN</p>
+            <h1 class="couple-title-main">Udin & Lisa</h1>
+            <p class="wedding-date">Minggu, 18 Oktober 2026</p>
+            
+            <div class="guest-box">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i:</p>
+                <h3 id="guestName">Tamu Undangan</h3>
+            </div>
+
+            <button class="btn-open" id="openInvitationBtn">
+                <i data-lucide="mail-open"></i> Buka Undangan
+            </button>
+        </div>
+    </div>
+
+    <!-- MAIN INVITATION CONTENT -->
+    <div class="invitation-wrapper" id="mainContent">
+
+        <!-- HEADER HERO -->
+        <header class="hero-section">
+            <div class="gunungan-icon">ꦄꦏꦢ꧀</div>
+            <p class="sub-heading">WEDDING INVITATION</p>
+            <h1 class="couple-title">Udin & Lisa</h1>
+            <p class="hero-date"><i data-lucide="calendar"></i> Minggu, 18 Oktober 2026</p>
+        </header>
+
+        <!-- KUTIPAN / AYAT -->
+        <section class="quote-section">
+            <div class="section-divider">❖ ❖ ❖</div>
+            <p class="quote-text">
+                "Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan untukmu istri-istri dari mejenismu sendiri, supaya kamu cenderung dan merasa tenteram kepadanya, dan dijadikan-Nya di antaramu rasa kasih dan sayang."
+            </p>
+            <p class="quote-source">(Ar-Rum: 21)</p>
+        </section>
+
+        <!-- PROFIL MEMPELAI -->
+        <section class="couples-section">
+            <h2 class="section-title">Mempelai</h2>
+            <div class="couples-grid">
+                
+                <!-- Mempelai Pria -->
+                <div class="couple-card">
+                    <div class="photo-frame">
+                        <img src="./images/udin.jpeg" alt="Mempelai Pria">
+                    </div>
+                    <h3>Muhammad Fahrudin, S.T.</h3>
+                    <p class="parents">Putra Pertama dari<br>Bpk. Bonjol & Ibu Kut</p>
+                    <a href="https://instagram.com" target="_blank" class="instagram-link"><i data-lucide="instagram"></i> @d.i.x.e.y</a>
+                </div>
+
+                <div class="and-symbol">&</div>
+
+                <!-- Mempelai Wanita -->
+                <div class="couple-card">
+                    <div class="photo-frame">
+                        <img src="./images/lisa.jpeg" alt="Mempelai Wanita">
+                    </div>
+                    <h3>Lisa Black Pink.</h3>
+                    <p class="parents">Putri Kedua dari<br>Bpk. Prabonjol & Ibu Kut Lestari</p>
+                    <a href="https://instagram.com" target="_blank" class="instagram-link"><i data-lucide="instagram"></i> @lalalalisa_m</a>
+                </div>
+
+            </div>
+        </section>
+
+        <!-- COUNTDOWN TIMER -->
+        <section class="timer-section">
+            <h2 class="section-title">Menghitung Hari</h2>
+            <div class="countdown-wrapper">
+                <div class="timer-box"><span id="days">00</span><small>Hari</small></div>
+                <div class="timer-box"><span id="hours">00</span><small>Jam</small></div>
+                <div class="timer-box"><span id="minutes">00</span><small>Menit</small></div>
+                <div class="timer-box"><span id="seconds">00</span><small>Detik</small></div>
+            </div>
+        </section>
+
+        <!-- RANGKAIAN ACARA -->
+        <section class="event-section">
+            <h2 class="section-title">Rangkaian Acara</h2>
+            
+            <div class="event-grid">
+                <!-- Akad Nikah -->
+                <div class="event-card">
+                    <i data-lucide="heart-handshake" class="event-icon"></i>
+                    <h3>AKAD NIKAH</h3>
+                    <p class="event-time"><i data-lucide="clock"></i> 08.00 - 10.00 WIB</p>
+                    <p class="event-address">
+                        <strong>Kerajaan Kebon Sari</strong><br>
+                        Jl. KH. Ali Erfan RT01/RW01, Manyar-Gresik
+                    </p>
+                </div>
+
+                <!-- Resepsi -->
+                <div class="event-card">
+                    <i data-lucide="glass-water" class="event-icon"></i>
+                    <h3>RESEPSI</h3>
+                    <p class="event-time"><i data-lucide="clock"></i> 11.00 - 14.00 WIB</p>
+                    <p class="event-address">
+                        <strong>Kerajaan Kebon Sari</strong><br>
+                        Jl. KH. Ali Erfan RT01/RW01, Manyar-Gresik
+                    </p>
+                </div>
+            </div>
+
+            <!-- Peta Lokasi Button & Iframe -->
+            <div class="map-container">
+                <a href="https://maps.google.com" target="_blank" class="btn-gold"><i data-lucide="map-pin"></i> Buka Google Maps</a>
+            </div>
+        </section>
+
+        <!-- GALERI FOTO -->
+        <section class="gallery-section">
+            <h2 class="section-title">Galeri Bahagia</h2>
+            <div class="gallery-grid">
+                <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=600&auto=format&fit=crop" alt="Foto Prewedding 1">
+                <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?q=80&w=600&auto=format&fit=crop" alt="Foto Prewedding 2">
+                <img src="https://images.unsplash.com/photo-1583939003579-730e3918a45a?q=80&w=600&auto=format&fit=crop" alt="Foto Prewedding 3">
+                <img src="https://images.unsplash.com/photo-1606800052052-a08af7148866?q=80&w=600&auto=format&fit=crop" alt="Foto Prewedding 4">
+            </div>
+        </section>
+
+        <!-- AMPLOP DIGITAL -->
+        <section class="gift-section">
+            <h2 class="section-title">Tanda Kasih</h2>
+            <p class="gift-subtitle">Doa restu Anda merupakan karunia yang terindah. Namun jika ingin memberikan tanda kasih, Anda dapat menyalurkannya melalui:</p>
+            
+            <div class="bank-grid">
+                <div class="bank-card">
+                    <h4>BANK BCA</h4>
+                    <p class="account-number" id="bcaAcc">12345678910</p>
+                    <p class="account-name">Udin Bonjol</p>
+                    <button class="btn-copy" onclick="copyText('bcaAcc')"><i data-lucide="copy"></i> Salin Rekening</button>
+                </div>
+                <div class="bank-card">
+                    <h4>BANK MANDIRI</h4>
+                    <p class="account-number" id="mandiriAcc">12345678910</p>
+                    <p class="account-name">Lisa Black Pink</p>
+                    <button class="btn-copy" onclick="copyText('mandiriAcc')"><i data-lucide="copy"></i> Salin Rekening</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- FORM UCAPAN & RSVP -->
+        <section class="rsvp-section">
+            <h2 class="section-title">Konfirmasi & Doa Restu</h2>
+            
+            <form id="rsvpForm" class="rsvp-form">
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="inputName" placeholder="Masukkan nama Anda" required>
+                </div>
+                <div class="form-group">
+                    <label>Konfirmasi Kehadiran</label>
+                    <select id="inputStatus" required>
+                        <option value="Hadir">Hadir</option>
+                        <option value="Ragu-ragu">Masih Ragu</option>
+                        <option value="Tidak Hadir">Tidak Dapat Hadir</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label>Pesan & Doa Restu</label>
+                    <textarea id="inputMessage" rows="4" placeholder="Tuliskan ucapan dan doa Anda..." required></textarea>
+                </div>
+                <button type="submit" class="btn-gold-submit"><i data-lucide="send"></i> Kirim Ucapan</button>
+            </form>
+
+            <!-- DAFTAR UCAPAN TAMU -->
+            <div class="wishes-box" id="wishesBox">
+                <h3>Ucapan & Doa Restu</h3>
+                <div class="wishes-list" id="wishesList">
+                    <div class="wish-item">
+                        <strong>Budi & Keluarga</strong> <span class="badge-status">Hadir</span>
+                        <p>Selamat untuk Damar dan Sekar! Semoga menjadi keluarga yang sakinah, mawaddah, warahmah.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="invitation-footer">
+            <p>Matur Nuwun</p>
+            <p class="studio-credit">Digital Invitation Design by <strong>CLEAVE STUDIO</strong></p>
+        </footer>
+
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        lucide.createIcons();
+    </script>
+</body>
+</html>
